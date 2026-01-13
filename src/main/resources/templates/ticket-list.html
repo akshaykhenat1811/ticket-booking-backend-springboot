@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h2> All Ticket</h2>
+<a href="/add" class="add-btn">ADD new Ticket</a>
+<table>
+<tr>
+<th>ID</th>
+<th>Passenger</th>
+<th>Form</th>
+<th>To</th>
+<th>Price</th>
+<th>Action</th>
+</tr>
+<tr>
+<tr th:each="t : ${tickets}">
+    <td th:text="${t.id}"></td>
+    <td th:text="${t.passengerName}"></td>
+    <td th:text="${t.source}"></td>
+    <td th:text="${t.destination}"></td>
+    <td th:text="${t.price}"></td>
+<td>
+      <a th:href="@{/edit/{id}(id=${t.id})}">Edit</a>
+      <a th:href="@{/delete/{id}(id=${t.id})}">Delete</a>
+  </td>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h2>Add / Update Ticket</h2>
+<form action="/saveTicket" method="post">
+<input type="hidden" name="id" th:value="${ticket.id}" >
+
+<input type="text" name="passengerName" placeholder="Passenger name"
+       th:value="${ticket.passengerName}" required>
+
+<input type="text" name="source" placeholder="Source"
+       th:value="${ticket.source}" required>
+
+<input type="text" name="destination" placeholder="Destination"
+       th:value="${ticket.destination}" required>
+
+<input type="number" name="price" placeholder="price"
+       th:value="${ticket.price}" required>
+       
+<button type="submit">save ticket</button>
+
+</form>
+<a href="/">Back to List</a>
+
+</body>
+</html>
